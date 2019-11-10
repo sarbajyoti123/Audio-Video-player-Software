@@ -44,11 +44,7 @@ class VideoWindow(QMainWindow):
         self.forward = QPushButton()
         self.forward.setEnabled(True)
         self.forward.setIcon(self.style().standardIcon(QStyle.SP_MediaSeekForward))
-        # self.forward.clicked.connect(self.forwar)
-        
-
-      
-
+   
         # Create new action
         openAction = QAction(QIcon('open3.png'), '&Open', self)        
         openAction.setShortcut('Ctrl+O')
@@ -90,12 +86,9 @@ class VideoWindow(QMainWindow):
         wid = QWidget(self)
         self.setCentralWidget(wid)
         
-        # self.label4=QLabel()
-        # self.label4.setText('hiiiiiiiii')
+        
         # Create layouts to place inside widget
         controlLayout = QHBoxLayout()
-        # controlLayout.setContentsMargins(0, 0, 0, 0)
-        # controlLayout.addWidget(self.label4)
         controlLayout.addWidget(self.playButton)
         # controlLayout.addWidget(self.backward)
         controlLayout.addWidget(self.positionSlider)
@@ -105,9 +98,7 @@ class VideoWindow(QMainWindow):
         layout = QVBoxLayout()
         layout.addWidget(videoWidget)
         layout.addLayout(controlLayout)
-        # layout.addWidget(self.label4)
-        # layout.addWidget(self.errorLabel)
-        # layout.addWidget(self.positionSlider2)
+        
         
         # Set widget to contain window contents
         wid.setLayout(layout)
@@ -121,8 +112,7 @@ class VideoWindow(QMainWindow):
         self.mediaPlayer.positionChanged.connect(self.positionChanged)
         self.mediaPlayer.durationChanged.connect(self.durationChanged)
         self.mediaPlayer.currentMediaChanged.connect(self.songChanged)
-        # self.sound=QAudio()
-        # self.mediaPlayer.error.connect(self.handleError)
+        
     
     def songChanged(self, media):
         if not media.isNull():
@@ -177,9 +167,6 @@ class VideoWindow(QMainWindow):
 
     def forward3(self):
         self.mediaPlayer.setPlaybackRate(0.25)
-    # def audio(self):
-        # a=
-        # print(a)
 
 
 if __name__ == '__main__':
